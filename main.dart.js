@@ -218302,15 +218302,17 @@
   };
   A.PhotoboothPreview.prototype = {
     build$1(context) {
-      var _this = this, _null = null,
-        t1 = A.BorderRadius$circular(12),
-        t2 = A.BoxDecoration$(_null, A.BorderRadius$circular(12), _null, B.Color_wst, _null, _null, B.BoxShape_0);
-      t2 = A.Center$(new A.Padding(B.EdgeInsets_20_0_20_0, new A.ColoredBox(B.Color_wst, A.ClipRRect$(t1, A.Container$(_null, A.AspectRatio$(_this.aspectRatio, new A.AnimatedSwitcher(_this.preview, B.Duration_300000, new A.PhotoboothPreview_build_closure(), B.ValueKey_gNV)), B.Clip_0, _null, _null, t2, _null, _null, _null, _null, _null)), _null), _null), _null, _null);
-      t1 = A.Positioned$fill(0, A.GestureDetector$(_null, _null, B.DragStartBehavior_1, false, B.ValueKey_Mhv, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, new A.PhotoboothPreview_build_closure0(context), _null, _null, _null));
-      t1 = A._setArrayType([t2, t1, A.Align$(B.Alignment_0_1, new A.Padding(B.EdgeInsets_0_0_0_20, new A.ShutterButton(_this.onSnapPressed, A.shutter_button___getAudioPlayer$closure(), B.ValueKey_Q2H), _null), _null, _null, _null)], type$.JSArray_Widget);
-      if (!_this.helper.get$isMobileAndroid())
-        t1.push(A.Align$(B.Alignment_1_1, new A.Padding(B.EdgeInsets_0_0_32_30, A.Semantics$(true, A.Material$(B.Duration_200000, true, _null, A.InkWell$(false, _null, true, A.Image$asset("assets/icons/flip_camera_button_icon.png", _null, _null, B.FilterQuality_2, _null, _null, false, 48, 48), _null, true, _null, _null, B.ValueKey_z07, _null, _null, _null, _null, _this.onToggleCameraType, _null, _null, _null), B.Clip_1, B.Color_Edl, 0, _null, _null, B.CircleBorder_oSW, _null, _null, B.MaterialType_0), false, _null, false, false, true, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null), _null), _null, _null, _null));
-      return A.Stack$(B.AlignmentDirectional_m1_m1, t1, B.Clip_1, B.StackFit_1);
+      var t2, t3, _this = this, _null = null,
+        t1 = _this.helper;
+      A.print__debugPrintThrottled$closure().call$1("photobooth_preview::" + t1.get$isMobileAndroid());
+      t2 = A.BorderRadius$circular(12);
+      t3 = A.BoxDecoration$(_null, A.BorderRadius$circular(12), _null, B.Color_wst, _null, _null, B.BoxShape_0);
+      t3 = A.Center$(new A.Padding(B.EdgeInsets_20_0_20_0, new A.ColoredBox(B.Color_wst, A.ClipRRect$(t2, A.Container$(_null, A.AspectRatio$(_this.aspectRatio, new A.AnimatedSwitcher(_this.preview, B.Duration_300000, new A.PhotoboothPreview_build_closure(), B.ValueKey_gNV)), B.Clip_0, _null, _null, t3, _null, _null, _null, _null, _null)), _null), _null), _null, _null);
+      t2 = A.Positioned$fill(0, A.GestureDetector$(_null, _null, B.DragStartBehavior_1, false, B.ValueKey_Mhv, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, new A.PhotoboothPreview_build_closure0(context), _null, _null, _null));
+      t2 = A._setArrayType([t3, t2, A.Align$(B.Alignment_0_1, new A.Padding(B.EdgeInsets_0_0_0_20, new A.ShutterButton(_this.onSnapPressed, A.shutter_button___getAudioPlayer$closure(), B.ValueKey_Q2H), _null), _null, _null, _null)], type$.JSArray_Widget);
+      if (!t1.get$isMobileAndroid())
+        t2.push(A.Align$(B.Alignment_1_1, new A.Padding(B.EdgeInsets_0_0_32_30, A.Semantics$(true, A.Material$(B.Duration_200000, true, _null, A.InkWell$(false, _null, true, A.Image$asset("assets/icons/flip_camera_button_icon.png", _null, _null, B.FilterQuality_2, _null, _null, false, 48, 48), _null, true, _null, _null, B.ValueKey_z07, _null, _null, _null, _null, _this.onToggleCameraType, _null, _null, _null), B.Clip_1, B.Color_Edl, 0, _null, _null, B.CircleBorder_oSW, _null, _null, B.MaterialType_0), false, _null, false, false, true, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null, _null), _null), _null, _null, _null));
+      return A.Stack$(B.AlignmentDirectional_m1_m1, t2, B.Clip_1, B.StackFit_1);
     }
   };
   A.PhotoboothPreview_build_closure.prototype = {
