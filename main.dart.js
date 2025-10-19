@@ -18867,9 +18867,8 @@
       this.index = t0;
       this._name = t1;
     },
-    FacingMode: function FacingMode(t0, t1) {
-      this.constrain = t0;
-      this.type = t1;
+    FacingMode: function FacingMode(t0) {
+      this.type = t0;
     },
     AudioConstraints: function AudioConstraints() {
     },
@@ -99257,7 +99256,7 @@
   A.FacingMode.prototype = {
     toJson$0() {
       var t1 = type$.String;
-      return A.LinkedHashMap_LinkedHashMap$_literal([A.describeEnum(this.constrain), A.describeEnum(this.type)], t1, t1);
+      return A.LinkedHashMap_LinkedHashMap$_literal([A.describeEnum(B.Constrain_1), A.describeEnum(this.type)], t1, t1);
     }
   };
   A.AudioConstraints.prototype = {
@@ -217983,7 +217982,7 @@
   };
   A.PhotoboothView.prototype = {
     createState$0() {
-      return new A._PhotoboothViewState(new A.UniqueKey(), A.CameraController$(B.CameraOptions_AR2), B._StateLifecycle_0);
+      return new A._PhotoboothViewState(new A.UniqueKey(), A.CameraController$(B.CameraOptions_0r6), B._StateLifecycle_0);
     }
   };
   A._PhotoboothViewState.prototype = {
@@ -218163,7 +218162,7 @@
   A._PhotoboothViewState__onToggleCameraType_closure0.prototype = {
     call$0() {
       var t1 = this.$this;
-      t1._photobooth_page$_controller = A.CameraController$(B.CameraOptions_dgT);
+      t1._photobooth_page$_controller = A.CameraController$(B.CameraOptions_Gqd);
       t1._switchingCamera = false;
     },
     $signature: 1
@@ -218171,7 +218170,7 @@
   A._PhotoboothViewState__onToggleCameraType_closure1.prototype = {
     call$0() {
       var t1 = this.$this;
-      t1._photobooth_page$_controller = A.CameraController$(B.CameraOptions_AR2);
+      t1._photobooth_page$_controller = A.CameraController$(B.CameraOptions_0r6);
       t1._switchingCamera = false;
     },
     $signature: 1
@@ -237823,20 +237822,19 @@
     B.CacheExtentStyle_1 = new A.CacheExtentStyle(1, "viewport");
     B.Constrain_1 = new A.Constrain(1, "ideal");
     B.CameraType_2 = new A.CameraType(2, "user");
-    B.FacingMode_Constrain_1_CameraType_2 = new A.FacingMode(B.Constrain_1, B.CameraType_2);
+    B.FacingMode_CameraType_2 = new A.FacingMode(B.CameraType_2);
     B.VideoSize_480_768_1080 = new A.VideoSize(480, 768, 1080);
     B.VideoSize_640_1024_1440 = new A.VideoSize(640, 1024, 1440);
-    B.VideoConstraints_c7f = new A.VideoConstraints(B.FacingMode_Constrain_1_CameraType_2, B.VideoSize_480_768_1080, B.VideoSize_640_1024_1440);
-    B.CameraOptions_AR2 = new A.CameraOptions(B.VideoConstraints_c7f);
-    B.VideoConstraints_null_null_null = new A.VideoConstraints(null, null, null);
-    B.CameraOptions_VideoConstraints_null_null_null = new A.CameraOptions(B.VideoConstraints_null_null_null);
-    B.Constrain_0 = new A.Constrain(0, "exact");
+    B.VideoConstraints_10U = new A.VideoConstraints(B.FacingMode_CameraType_2, B.VideoSize_480_768_1080, B.VideoSize_640_1024_1440);
+    B.CameraOptions_0r6 = new A.CameraOptions(B.VideoConstraints_10U);
     B.CameraType_1 = new A.CameraType(1, "rear");
-    B.FacingMode_Constrain_0_CameraType_1 = new A.FacingMode(B.Constrain_0, B.CameraType_1);
+    B.FacingMode_CameraType_1 = new A.FacingMode(B.CameraType_1);
     B.VideoSize_600_768_1080 = new A.VideoSize(600, 768, 1080);
     B.VideoSize_800_1024_1440 = new A.VideoSize(800, 1024, 1440);
-    B.VideoConstraints_lCk = new A.VideoConstraints(B.FacingMode_Constrain_0_CameraType_1, B.VideoSize_600_768_1080, B.VideoSize_800_1024_1440);
-    B.CameraOptions_dgT = new A.CameraOptions(B.VideoConstraints_lCk);
+    B.VideoConstraints_5uJ = new A.VideoConstraints(B.FacingMode_CameraType_1, B.VideoSize_600_768_1080, B.VideoSize_800_1024_1440);
+    B.CameraOptions_Gqd = new A.CameraOptions(B.VideoConstraints_5uJ);
+    B.VideoConstraints_null_null_null = new A.VideoConstraints(null, null, null);
+    B.CameraOptions_VideoConstraints_null_null_null = new A.CameraOptions(B.VideoConstraints_null_null_null);
     B.CameraStatus_0 = new A.CameraStatus(0, "uninitialized");
     B.CameraState_CameraStatus_0_null = new A.CameraState(B.CameraStatus_0, null);
     B.CameraStatus_1 = new A.CameraStatus(1, "available");
