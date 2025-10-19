@@ -55752,14 +55752,17 @@
                 $.Env___apiBase.set$finalFieldValue("https://eventpro.cheil.rocks/_stg/api/v1");
                 $.Env___appBase.set$finalFieldValue("https://eventpro.cheil.rocks/_stg/apps");
                 $.Env___showDebugOverlays.set$finalFieldValue(true);
+                $.Env___useFirebaseUpload.set$finalFieldValue(false);
               } else if (host === "localhost") {
                 $.Env___apiBase.set$finalFieldValue("http://localhost/eventpro.cheil.rocks/api/v1");
                 $.Env___appBase.set$finalFieldValue("http://localhost/eventpro.cheil.rocks/apps");
                 $.Env___showDebugOverlays.set$finalFieldValue(true);
+                $.Env___useFirebaseUpload.set$finalFieldValue(false);
               } else {
                 $.Env___apiBase.set$finalFieldValue("https://eventpro.cheil.rocks/_/api/v1");
                 $.Env___appBase.set$finalFieldValue("https://eventpro.cheil.rocks/_/apps");
                 $.Env___showDebugOverlays.set$finalFieldValue(false);
+                $.Env___useFirebaseUpload.set$finalFieldValue(true);
               }
               if ($.WidgetsBinding__instance == null)
                 A.WidgetsFlutterBinding$();
@@ -219155,7 +219158,7 @@
       }
       if (compositeStatus === B.ShareStatus_3)
         t4.push(B.AnimatedFadeIn_ElQ);
-      return new A.Padding(B.EdgeInsets_24_0_24_0, A.Column$(t4, B.MainAxisAlignment_0, B.MainAxisSize_0), _null);
+      return new A.Padding(B.EdgeInsets_18_0_18_0, A.Column$(t4, B.MainAxisAlignment_0, B.MainAxisSize_0), _null);
     }
   };
   A.ShareBody_build_closure.prototype = {
@@ -226590,7 +226593,7 @@
     build$1(context) {
       var _null = null,
         t1 = type$.JSArray_Widget,
-        t2 = A._setArrayType([new A.SliverToBoxAdapter(B.Column_7Ds, _null), new A.SliverFillRemaining(A.Container$(B.Alignment_0_1, B.Row_gl1, B.Clip_0, _null, _null, _null, 200, _null, _null, _null, _null), false, _null)], t1);
+        t2 = A._setArrayType([new A.SliverToBoxAdapter(B.Column_05O, _null), new A.SliverFillRemaining(A.Container$(B.Alignment_0_1, B.SizedBox_null_0_null_null, B.Clip_0, _null, _null, _null, 200, _null, _null, _null, _null), false, _null)], t1);
       t1 = A._setArrayType([B.ShareBackground_null, new A.CustomScrollView(t2, B.Axis_1, false, _null, _null, B.AlwaysScrollableScrollPhysics_null, _null, false, _null, 0, _null, _null, B.SliverPaintOrder_0, B.DragStartBehavior_1, _null, _null, B.Clip_1, B.HitTestBehavior_1, _null)], t1);
       B.JSArray_methods.addAll$1(t1, B.List_ShareProgressOverlay_null);
       return A.Stack$(B.AlignmentDirectional_m1_m1, t1, B.Clip_1, B.StackFit_1);
@@ -227130,6 +227133,10 @@
               A.PlatformInterface__verify(app, t1, true);
               t2 = A.FirebaseFirestore_instanceFor(new A.FirebaseApp(app));
               t2.get$_cloud_firestore$_delegate().set$settings(t2.get$_cloud_firestore$_delegate().get$settings().copyWith$7$cacheSizeBytes$host$persistenceEnabled$sslEnabled$webExperimentalAutoDetectLongPolling$webExperimentalForceLongPolling$webExperimentalLongPollingOptions(null, null, true, null, null, null, null));
+              $async$goto = $.Env___useFirebaseUpload._readField$0() ? 3 : 4;
+              break;
+            case 3:
+              // then
               reference = null;
               try {
                 t2 = $async$self._firebaseStorage;
@@ -227153,9 +227160,9 @@
                 t1 = A.UploadPhotoException$("Uploading photo " + fileName + " failed. Couldn't get storage reference 'uploads/" + fileName + "'.\nError: " + A.S(e) + ". StackTrace: " + A.S(st));
                 throw A.wrapException(t1);
               }
-              $async$goto = 3;
+              $async$goto = 5;
               return A._asyncAwait($async$self._photoExists$1(reference), $async$sharePhoto$3$data$fileName$shareText);
-            case 3:
+            case 5:
               // returning from await.
               if ($async$result) {
                 t1 = "https://io-photobooth-dev.web.app/share/" + fileName;
@@ -227164,14 +227171,14 @@
                 $async$goto = 1;
                 break;
               }
-              $async$handler = 5;
+              $async$handler = 7;
               t2 = reference;
               t3 = t2.storage;
               t2 = t2._firebase_storage$_delegate.putData$2(data, null);
               A.PlatformInterface__verify(t2, $.$get$TaskPlatform__token(), true);
-              $async$goto = 8;
+              $async$goto = 10;
               return A._asyncAwait(new A.UploadTask(t2, t3), $async$sharePhoto$3$data$fileName$shareText);
-            case 8:
+            case 10:
               // returning from await.
               t3 = $.Firebase_delegatePackingProperty;
               app = (t3 == null ? $.Firebase_delegatePackingProperty = $.$get$FirebasePlatform__instance() : t3).app$1("[DEFAULT]");
@@ -227183,37 +227190,39 @@
                 A.throwExpression(A.ArgumentError$("A collection path must point to a valid collection.", null));
               t1 = A._JsonCollectionReference$(t1, t1.get$_cloud_firestore$_delegate().collection$1("uploads"));
               t2 = $.$get$FieldValue__factory().serverTimestamp$0();
-              $async$goto = 9;
+              $async$goto = 11;
               return A._asyncAwait(t1.add$1(0, A.LinkedHashMap_LinkedHashMap$_literal(["createdAt", new A.FieldValue(t2, t2), "campaignID", "DORCO-2025-001", "filename", fileName, "status", "pending"], type$.String, type$.dynamic)), $async$sharePhoto$3$data$fileName$shareText);
-            case 9:
+            case 11:
               // returning from await.
               doc = $async$result;
-              $async$goto = 10;
+              $async$goto = 12;
               return A._asyncAwait($async$self._trackPhotoEntry$2$fileName$firestoreID(fileName, B.JSArray_methods.get$last(doc._cloud_firestore$_delegate._platform_interface_document_reference$_pointer.components)), $async$sharePhoto$3$data$fileName$shareText);
-            case 10:
+            case 12:
               // returning from await.
               $async$handler = 2;
               // goto after finally
-              $async$goto = 7;
+              $async$goto = 9;
               break;
-            case 5:
+            case 7:
               // catch
-              $async$handler = 4;
+              $async$handler = 6;
               $async$exception = $async$errorStack.pop();
               error = A.unwrapException($async$exception);
               stackTrace = A.getTraceFromException($async$exception);
               t1 = A.UploadPhotoException$("Uploading photo " + fileName + " failed. Couldn't upload data to " + J.get$fullPath$z(reference) + ".\nError: " + A.S(error) + ". StackTrace: " + A.S(stackTrace));
               throw A.wrapException(t1);
               // goto after finally
-              $async$goto = 7;
+              $async$goto = 9;
               break;
-            case 4:
+            case 6:
               // uncaught
               // goto rethrow
               $async$goto = 2;
               break;
-            case 7:
+            case 9:
               // after finally
+            case 4:
+              // join
               t1 = "https://io-photobooth-dev.web.app/share/" + fileName;
               $async$returnValue = new A.ShareUrls(t1, "https://www.facebook.com/sharer.php?u=" + t1 + "&quote=" + A._Uri__uriEncode(2, shareText, B.C_Utf8Codec, false), "https://twitter.com/intent/tweet?url=" + t1 + "&text=" + A._Uri__uriEncode(2, shareText, B.C_Utf8Codec, false));
               // goto return
@@ -237388,18 +237397,18 @@
     B.AppLifecycleState_2 = new A.AppLifecycleState(2, "inactive");
     B.AppLifecycleState_3 = new A.AppLifecycleState(3, "hidden");
     B.AppLifecycleState_4 = new A.AppLifecycleState(4, "paused");
-    B.MainAxisSize_1 = new A.MainAxisSize(1, "max");
     B.ShareBody_null = new A.ShareBody(null);
-    B.SizedBox_null_32_null_null = new A.SizedBox(null, 32, null, null);
-    B.List_ish = makeConstList([B.ShareBody_null, B.SizedBox_null_32_null_null], type$.JSArray_Widget);
-    B.Column_7Ds = new A.Column(B.Axis_1, B.MainAxisAlignment_0, B.MainAxisSize_1, B.CrossAxisAlignment_2, null, B.VerticalDirection_1, null, 0, B.List_ish, null);
     B.Axis_0 = new A.Axis(0, "horizontal");
-    B.MainAxisAlignment_4 = new A.MainAxisAlignment(4, "spaceAround");
+    B.MainAxisAlignment_5 = new A.MainAxisAlignment(5, "spaceEvenly");
+    B.MainAxisSize_1 = new A.MainAxisSize(1, "max");
     B._ShareRetakeButton_null = new A._ShareRetakeButton(null);
-    B.SizedBox_18_null_null_null = new A.SizedBox(18, null, null, null);
+    B.SizedBox_8_null_null_null = new A.SizedBox(8, null, null, null);
     B._ShareExitButton_null = new A._ShareExitButton(null);
-    B.List_E1i = makeConstList([B._ShareRetakeButton_null, B.SizedBox_18_null_null_null, B._ShareExitButton_null], type$.JSArray_Widget);
-    B.Row_gl1 = new A.Row(B.Axis_0, B.MainAxisAlignment_4, B.MainAxisSize_1, B.CrossAxisAlignment_2, null, B.VerticalDirection_1, null, 0, B.List_E1i, null);
+    B.List_uSo = makeConstList([B._ShareRetakeButton_null, B.SizedBox_8_null_null_null, B._ShareExitButton_null], type$.JSArray_Widget);
+    B.Row_H9o = new A.Row(B.Axis_0, B.MainAxisAlignment_5, B.MainAxisSize_1, B.CrossAxisAlignment_2, null, B.VerticalDirection_1, null, 0, B.List_uSo, null);
+    B.List_hTq = makeConstList([B.ShareBody_null, B.Row_H9o], type$.JSArray_Widget);
+    B.Column_05O = new A.Column(B.Axis_1, B.MainAxisAlignment_0, B.MainAxisSize_0, B.CrossAxisAlignment_2, null, B.VerticalDirection_1, null, 0, B.List_hTq, null);
+    B.SizedBox_null_0_null_null = new A.SizedBox(null, 0, null, null);
     B.ShareBackground_null = new A.ShareBackground(null);
     B.ShareProgressOverlay_null = new A.ShareProgressOverlay(null);
     B.List_ShareProgressOverlay_null = makeConstList([B.ShareProgressOverlay_null], type$.JSArray_Widget);
@@ -238127,6 +238136,7 @@
     B.EdgeInsets_16_0_16_0 = new A.EdgeInsets(16, 0, 16, 0);
     B.EdgeInsets_16_18_16_18 = new A.EdgeInsets(16, 18, 16, 18);
     B.EdgeInsets_16_4_16_4 = new A.EdgeInsets(16, 4, 16, 4);
+    B.EdgeInsets_18_0_18_0 = new A.EdgeInsets(18, 0, 18, 0);
     B.EdgeInsets_20_0_20_0 = new A.EdgeInsets(20, 0, 20, 0);
     B.EdgeInsets_20_0_20_3 = new A.EdgeInsets(20, 0, 20, 3);
     B.EdgeInsets_20_20_20_20 = new A.EdgeInsets(20, 20, 20, 20);
@@ -238675,7 +238685,7 @@
     B.MainAxisAlignment_1 = new A.MainAxisAlignment(1, "end");
     B.MainAxisAlignment_2 = new A.MainAxisAlignment(2, "center");
     B.MainAxisAlignment_3 = new A.MainAxisAlignment(3, "spaceBetween");
-    B.MainAxisAlignment_5 = new A.MainAxisAlignment(5, "spaceEvenly");
+    B.MainAxisAlignment_4 = new A.MainAxisAlignment(4, "spaceAround");
     B.List_Fan = makeConstList([B.MainAxisAlignment_0, B.MainAxisAlignment_1, B.MainAxisAlignment_2, B.MainAxisAlignment_3, B.MainAxisAlignment_4, B.MainAxisAlignment_5], A.findType("JSArray<MainAxisAlignment>"));
     B.List_FcQ = makeConstList(["\u0441\u0456\u0447\u043d\u044f", "\u043b\u044e\u0442\u043e\u0433\u043e", "\u0431\u0435\u0440\u0435\u0437\u043d\u044f", "\u043a\u0432\u0456\u0442\u043d\u044f", "\u0442\u0440\u0430\u0432\u043d\u044f", "\u0447\u0435\u0440\u0432\u043d\u044f", "\u043b\u0438\u043f\u043d\u044f", "\u0441\u0435\u0440\u043f\u043d\u044f", "\u0432\u0435\u0440\u0435\u0441\u043d\u044f", "\u0436\u043e\u0432\u0442\u043d\u044f", "\u043b\u0438\u0441\u0442\u043e\u043f\u0430\u0434\u0430", "\u0433\u0440\u0443\u0434\u043d\u044f"], type$.JSArray_String);
     B.List_FfV = makeConstList(["Sv\u0113td.", "Pirmd.", "Otrd.", "Tre\u0161d.", "Ceturtd.", "Piektd.", "Sestd."], type$.JSArray_String);
@@ -241408,6 +241418,7 @@
     B.SizedBox_null_16_null_null = new A.SizedBox(null, 16, null, null);
     B.SizedBox_null_24_null_null = new A.SizedBox(null, 24, null, null);
     B.SizedBox_null_28_null_null = new A.SizedBox(null, 28, null, null);
+    B.SizedBox_null_32_null_null = new A.SizedBox(null, 32, null, null);
     B.SizedBox_null_35_null_null = new A.SizedBox(null, 35, null, null);
     B.SizedBox_null_42_null_null = new A.SizedBox(null, 42, null, null);
     B.SizedBox_null_48_null_null = new A.SizedBox(null, 48, null, null);
@@ -242477,6 +242488,7 @@
     $.Env___apiBase = A._Cell$();
     $.Env___appBase = A._Cell$();
     $.Env___showDebugOverlays = A._Cell$();
+    $.Env___useFirebaseUpload = A._Cell$();
     $._debugIsSelecting = false;
     $._InheritedProviderScopeElement__nextProviderId = 0;
     $.debugIsInInheritedProviderUpdate = false;
