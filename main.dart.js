@@ -218131,13 +218131,13 @@
                 $async$self.setState$1(new A._PhotoboothViewState__onToggleCameraType_closure0($async$self));
               else
                 $async$self.setState$1(new A._PhotoboothViewState__onToggleCameraType_closure1($async$self));
-              $async$self.setState$1(new A._PhotoboothViewState__onToggleCameraType_closure2($async$self));
               $async$goto = 3;
               return A._asyncAwait($async$self._initializeCameraController$0(), $async$_onToggleCameraType$0);
             case 3:
               // returning from await.
               t1 = $async$self._photobooth_page$_controller.options.video.facingMode;
               A.print__debugPrintThrottled$closure().call$1("_cameraControllerType = " + A.S(t1 == null ? null : t1.type));
+              $async$self.setState$1(new A._PhotoboothViewState__onToggleCameraType_closure2($async$self));
               // implicit return
               return A._asyncReturn(null, $async$completer);
           }
