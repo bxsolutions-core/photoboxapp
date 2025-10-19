@@ -218149,6 +218149,7 @@
       orientation = A.InheritedModel_inheritFrom(context, null, type$.MediaQuery).data.get$orientation(0);
       aspectRatio = orientation === B.Orientation_0 ? 0.75 : 1.3333333333333333;
       A.print__debugPrintThrottled$closure().call$1("here: " + orientation.toString$0(0) + ", " + A.S(aspectRatio));
+      A.print__debugPrintThrottled$closure().call$1("helper.isMobileAndroid: " + new A.PlatformHelper().get$isMobileAndroid());
       return A.Scaffold$(new A._PhotoboothBackground(this._switchingCamera ? B.Center_Sh8 : A.Camera$(this._photobooth_page$_controller, new A._PhotoboothViewState_build_closure(), new A._PhotoboothViewState_build_closure0(), new A._PhotoboothViewState_build_closure1(this, aspectRatio)), null), true);
     }
   };
