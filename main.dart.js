@@ -218161,7 +218161,7 @@
   };
   A._PhotoboothViewState__onToggleCameraType_closure0.prototype = {
     call$0() {
-      this.$this._photobooth_page$_controller = A.CameraController$(B.CameraOptions_hAx);
+      this.$this._photobooth_page$_controller = A.CameraController$(B.CameraOptions_u7r);
     },
     $signature: 1
   };
@@ -237826,10 +237826,10 @@
     B.CameraOptions_VideoConstraints_null_null_null = new A.CameraOptions(B.VideoConstraints_null_null_null);
     B.CameraType_0 = new A.CameraType(0, "environment");
     B.FacingMode_CameraType_0 = new A.FacingMode(B.CameraType_0);
-    B.VideoSize_600_768_1080 = new A.VideoSize(600, 768, 1080);
-    B.VideoSize_800_1024_1440 = new A.VideoSize(800, 1024, 1440);
-    B.VideoConstraints_586 = new A.VideoConstraints(B.FacingMode_CameraType_0, B.VideoSize_600_768_1080, B.VideoSize_800_1024_1440);
-    B.CameraOptions_hAx = new A.CameraOptions(B.VideoConstraints_586);
+    B.VideoSize_600_1080_1440 = new A.VideoSize(600, 1080, 1440);
+    B.VideoSize_800_1440_1920 = new A.VideoSize(800, 1440, 1920);
+    B.VideoConstraints_CfM = new A.VideoConstraints(B.FacingMode_CameraType_0, B.VideoSize_600_1080_1440, B.VideoSize_800_1440_1920);
+    B.CameraOptions_u7r = new A.CameraOptions(B.VideoConstraints_CfM);
     B.CameraStatus_0 = new A.CameraStatus(0, "uninitialized");
     B.CameraState_CameraStatus_0_null = new A.CameraState(B.CameraStatus_0, null);
     B.CameraStatus_1 = new A.CameraStatus(1, "available");
