@@ -99439,19 +99439,7 @@
               if ((t1 == null ? null : B.MediaDevices_methods.get$getUserMedia(t1)) == null)
                 throw A.wrapException(B.C_CameraNotSupportedException);
               t1 = $async$self.options.video.facingMode;
-              if ((t1 == null ? null : t1.type) === B.CameraType_0) {
-                t1 = document.createElement("video");
-                t2 = t1.style;
-                t2.removeProperty("transform-origin").toString;
-                B.CssStyleDeclaration_methods._setPropertyHelper$3(t2, B.CssStyleDeclaration_methods._browserPropertyName$1(t2, "pointer-events"), "none", null);
-                B.CssStyleDeclaration_methods._setPropertyHelper$3(t2, B.CssStyleDeclaration_methods._browserPropertyName$1(t2, "width"), "100%", null);
-                B.CssStyleDeclaration_methods._setPropertyHelper$3(t2, B.CssStyleDeclaration_methods._browserPropertyName$1(t2, "height"), "100%", null);
-                B.CssStyleDeclaration_methods._setPropertyHelper$3(t2, B.CssStyleDeclaration_methods._browserPropertyName$1(t2, "transform"), "scaleX(1)", null);
-                B.CssStyleDeclaration_methods._setPropertyHelper$3(t2, B.CssStyleDeclaration_methods._browserPropertyName$1(t2, "object-fit"), "cover", null);
-                B.CssStyleDeclaration_methods._setPropertyHelper$3(t2, B.CssStyleDeclaration_methods._browserPropertyName$1(t2, "--webkit-transform"), "scaleX(1)", null);
-                B.CssStyleDeclaration_methods._setPropertyHelper$3(t2, B.CssStyleDeclaration_methods._browserPropertyName$1(t2, "--moz-transform"), "scaleX(1)", null);
-                $async$self.__Camera_videoElement_A = t1;
-              } else {
+              if ((t1 == null ? null : t1.type) === B.CameraType_2) {
                 t1 = document.createElement("video");
                 t2 = t1.style;
                 t2.removeProperty("transform-origin").toString;
@@ -99462,6 +99450,18 @@
                 B.CssStyleDeclaration_methods._setPropertyHelper$3(t2, B.CssStyleDeclaration_methods._browserPropertyName$1(t2, "object-fit"), "cover", null);
                 B.CssStyleDeclaration_methods._setPropertyHelper$3(t2, B.CssStyleDeclaration_methods._browserPropertyName$1(t2, "--webkit-transform"), "scaleX(-1)", null);
                 B.CssStyleDeclaration_methods._setPropertyHelper$3(t2, B.CssStyleDeclaration_methods._browserPropertyName$1(t2, "--moz-transform"), "scaleX(-1)", null);
+                $async$self.__Camera_videoElement_A = t1;
+              } else {
+                t1 = document.createElement("video");
+                t2 = t1.style;
+                t2.removeProperty("transform-origin").toString;
+                B.CssStyleDeclaration_methods._setPropertyHelper$3(t2, B.CssStyleDeclaration_methods._browserPropertyName$1(t2, "pointer-events"), "none", null);
+                B.CssStyleDeclaration_methods._setPropertyHelper$3(t2, B.CssStyleDeclaration_methods._browserPropertyName$1(t2, "width"), "100%", null);
+                B.CssStyleDeclaration_methods._setPropertyHelper$3(t2, B.CssStyleDeclaration_methods._browserPropertyName$1(t2, "height"), "100%", null);
+                B.CssStyleDeclaration_methods._setPropertyHelper$3(t2, B.CssStyleDeclaration_methods._browserPropertyName$1(t2, "transform"), "scaleX(1)", null);
+                B.CssStyleDeclaration_methods._setPropertyHelper$3(t2, B.CssStyleDeclaration_methods._browserPropertyName$1(t2, "object-fit"), "cover", null);
+                B.CssStyleDeclaration_methods._setPropertyHelper$3(t2, B.CssStyleDeclaration_methods._browserPropertyName$1(t2, "--webkit-transform"), "scaleX(1)", null);
+                B.CssStyleDeclaration_methods._setPropertyHelper$3(t2, B.CssStyleDeclaration_methods._browserPropertyName$1(t2, "--moz-transform"), "scaleX(1)", null);
                 $async$self.__Camera_videoElement_A = t1;
               }
               t1 = document.createElement("div");
@@ -99655,7 +99655,7 @@
               ctx.setTransform(1, 0, 0, 1, 0, 0);
               ctx.clearRect(0, 0, t2, t1);
               t3 = $async$self.options.video.facingMode;
-              if ((t3 == null ? null : t3.type) !== B.CameraType_0)
+              if ((t3 == null ? null : t3.type) !== B.CameraType_1)
                 ctx.setTransform(-1, 0, 0, 1, t2, 0);
               ctx.drawImage($async$self.__Camera_videoElement_A, 0, 0, t2, t1);
               ctx.restore();
@@ -217982,7 +217982,7 @@
   };
   A.PhotoboothView.prototype = {
     createState$0() {
-      return new A._PhotoboothViewState(new A.UniqueKey(), A.CameraController$(B.CameraOptions_H4M), B._StateLifecycle_0);
+      return new A._PhotoboothViewState(new A.UniqueKey(), A.CameraController$(B.CameraOptions_0r6), B._StateLifecycle_0);
     }
   };
   A._PhotoboothViewState.prototype = {
@@ -218127,16 +218127,16 @@
             case 2:
               // returning from await.
               t1 = $async$self._photobooth_page$_controller.options.video.facingMode;
-              if ((t1 == null ? null : t1.type) === B.CameraType_0)
+              if ((t1 == null ? null : t1.type) === B.CameraType_2)
                 $async$self.setState$1(new A._PhotoboothViewState__onToggleCameraType_closure0($async$self));
               else
                 $async$self.setState$1(new A._PhotoboothViewState__onToggleCameraType_closure1($async$self));
-              t1 = $async$self._photobooth_page$_controller.options.video.facingMode;
-              A.print__debugPrintThrottled$closure().call$1("_cameraControllerType = " + A.S(t1 == null ? null : t1.type));
               $async$goto = 3;
               return A._asyncAwait($async$self._initializeCameraController$0(), $async$_onToggleCameraType$0);
             case 3:
               // returning from await.
+              t1 = $async$self._photobooth_page$_controller.options.video.facingMode;
+              A.print__debugPrintThrottled$closure().call$1("_cameraControllerType = " + A.S(t1 == null ? null : t1.type));
               $async$self.setState$1(new A._PhotoboothViewState__onToggleCameraType_closure2($async$self));
               // implicit return
               return A._asyncReturn(null, $async$completer);
@@ -218161,13 +218161,13 @@
   };
   A._PhotoboothViewState__onToggleCameraType_closure0.prototype = {
     call$0() {
-      this.$this._photobooth_page$_controller = A.CameraController$(B.CameraOptions_H4M);
+      this.$this._photobooth_page$_controller = A.CameraController$(B.CameraOptions_u7r);
     },
     $signature: 1
   };
   A._PhotoboothViewState__onToggleCameraType_closure1.prototype = {
     call$0() {
-      this.$this._photobooth_page$_controller = A.CameraController$(B.CameraOptions_Ccy);
+      this.$this._photobooth_page$_controller = A.CameraController$(B.CameraOptions_0r6);
     },
     $signature: 1
   };
@@ -237816,26 +237816,27 @@
     B.CacheExtentStyle_0 = new A.CacheExtentStyle(0, "pixel");
     B.CacheExtentStyle_1 = new A.CacheExtentStyle(1, "viewport");
     B.Constrain_1 = new A.Constrain(1, "ideal");
-    B.CameraType_0 = new A.CameraType(0, "rear");
+    B.CameraType_2 = new A.CameraType(2, "user");
+    B.FacingMode_CameraType_2 = new A.FacingMode(B.CameraType_2);
+    B.VideoSize_480_768_1080 = new A.VideoSize(480, 768, 1080);
+    B.VideoSize_640_1024_1440 = new A.VideoSize(640, 1024, 1440);
+    B.VideoConstraints_10U = new A.VideoConstraints(B.FacingMode_CameraType_2, B.VideoSize_480_768_1080, B.VideoSize_640_1024_1440);
+    B.CameraOptions_0r6 = new A.CameraOptions(B.VideoConstraints_10U);
+    B.VideoConstraints_null_null_null = new A.VideoConstraints(null, null, null);
+    B.CameraOptions_VideoConstraints_null_null_null = new A.CameraOptions(B.VideoConstraints_null_null_null);
+    B.CameraType_0 = new A.CameraType(0, "environment");
     B.FacingMode_CameraType_0 = new A.FacingMode(B.CameraType_0);
     B.VideoSize_600_1080_1440 = new A.VideoSize(600, 1080, 1440);
     B.VideoSize_800_1440_1920 = new A.VideoSize(800, 1440, 1920);
-    B.VideoConstraints_YmA = new A.VideoConstraints(B.FacingMode_CameraType_0, B.VideoSize_600_1080_1440, B.VideoSize_800_1440_1920);
-    B.CameraOptions_Ccy = new A.CameraOptions(B.VideoConstraints_YmA);
-    B.CameraType_1 = new A.CameraType(1, "user");
-    B.FacingMode_CameraType_1 = new A.FacingMode(B.CameraType_1);
-    B.VideoSize_480_768_1080 = new A.VideoSize(480, 768, 1080);
-    B.VideoSize_640_1024_1440 = new A.VideoSize(640, 1024, 1440);
-    B.VideoConstraints_njl = new A.VideoConstraints(B.FacingMode_CameraType_1, B.VideoSize_480_768_1080, B.VideoSize_640_1024_1440);
-    B.CameraOptions_H4M = new A.CameraOptions(B.VideoConstraints_njl);
-    B.VideoConstraints_null_null_null = new A.VideoConstraints(null, null, null);
-    B.CameraOptions_VideoConstraints_null_null_null = new A.CameraOptions(B.VideoConstraints_null_null_null);
+    B.VideoConstraints_CfM = new A.VideoConstraints(B.FacingMode_CameraType_0, B.VideoSize_600_1080_1440, B.VideoSize_800_1440_1920);
+    B.CameraOptions_u7r = new A.CameraOptions(B.VideoConstraints_CfM);
     B.CameraStatus_0 = new A.CameraStatus(0, "uninitialized");
     B.CameraState_CameraStatus_0_null = new A.CameraState(B.CameraStatus_0, null);
     B.CameraStatus_1 = new A.CameraStatus(1, "available");
     B.CameraState_CameraStatus_1_null = new A.CameraState(B.CameraStatus_1, null);
     B.CameraStatus_2 = new A.CameraStatus(2, "unavailable");
     B.CameraState_pcD = new A.CameraState(B.CameraStatus_2, B.C_CameraUnknownException);
+    B.CameraType_1 = new A.CameraType(1, "rear");
     B.CanvasKitVariant_3 = new A.CanvasKitVariant(3, "experimentalWebParagraph");
     B.CardThemeData_Bjv = new A.CardThemeData(null, null, null, null, null, null, null);
     B.CarouselViewThemeData_jqc = new A.CarouselViewThemeData(null, null, null, null, null);
