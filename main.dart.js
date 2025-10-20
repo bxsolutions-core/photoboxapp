@@ -55750,17 +55750,17 @@
               host = t3.get$host(t3);
               t3 = A.Uri_base();
               path = t3.get$path(t3);
-              if (B.JSString_methods.contains$1(host, "stg") || B.JSString_methods.contains$1(path, "stg")) {
-                $.Env___apiBase.set$finalFieldValue("https://eventpro.cheil.rocks/_stg/api/v1");
-                $.Env___appBase.set$finalFieldValue("https://eventpro.cheil.rocks/_stg/apps");
+              if (host === "localhost") {
+                $.Env___apiBase.set$finalFieldValue("http://localhost/eventpro.cheil.rocks/api/v1");
+                $.Env___appBase.set$finalFieldValue("http://localhost/eventpro.cheil.rocks/apps");
                 $.Env___showDebugOverlays.set$finalFieldValue(true);
                 $.Env___useFirebaseUpload.set$finalFieldValue(false);
                 t3 = $.Env___apiBase;
                 t4 = $.Env___appBase;
               } else {
-                if (host === "localhost") {
-                  $.Env___apiBase.set$finalFieldValue("http://localhost/eventpro.cheil.rocks/api/v1");
-                  $.Env___appBase.set$finalFieldValue("http://localhost/eventpro.cheil.rocks/apps");
+                if (B.JSString_methods.contains$1(path, "stg")) {
+                  $.Env___apiBase.set$finalFieldValue("https://eventpro.cheil.rocks/_stg/api/v1");
+                  $.Env___appBase.set$finalFieldValue("https://eventpro.cheil.rocks/_stg/apps");
                   $.Env___showDebugOverlays.set$finalFieldValue(true);
                   $.Env___useFirebaseUpload.set$finalFieldValue(false);
                 } else {
@@ -99664,7 +99664,7 @@
               ctx.setTransform(1, 0, 0, 1, 0, 0);
               ctx.clearRect(0, 0, t2, t1);
               t3 = $async$self.options.video.facingMode;
-              if ((t3 == null ? null : t3.type) !== B.CameraType_1)
+              if ((t3 == null ? null : t3.type) === B.CameraType_2)
                 ctx.setTransform(-1, 0, 0, 1, t2, 0);
               ctx.drawImage($async$self.__Camera_videoElement_A, 0, 0, t2, t1);
               ctx.restore();
@@ -237845,7 +237845,6 @@
     B.CameraState_CameraStatus_1_null = new A.CameraState(B.CameraStatus_1, null);
     B.CameraStatus_2 = new A.CameraStatus(2, "unavailable");
     B.CameraState_pcD = new A.CameraState(B.CameraStatus_2, B.C_CameraUnknownException);
-    B.CameraType_1 = new A.CameraType(1, "rear");
     B.CanvasKitVariant_3 = new A.CanvasKitVariant(3, "experimentalWebParagraph");
     B.CardThemeData_Bjv = new A.CardThemeData(null, null, null, null, null, null, null);
     B.CarouselViewThemeData_jqc = new A.CarouselViewThemeData(null, null, null, null, null);
