@@ -23072,7 +23072,7 @@
       lastWordStart = A._Cell$();
       _box_0.currentChunk = 0;
       noWrap = new A._PrefixedStringBuilder__wordWrapLine_noWrap(_box_0, wrapRanges);
-      for (t2 = lastWordStart.__late_helper$_name, index = 0, mode = B._WordWrapParseMode_0, lastWordEnd = null, start = 0; true;)
+      for (t2 = lastWordStart.__late_helper$_name, index = 0, mode = B._WordWrapParseMode_00, lastWordEnd = null, start = 0; true;)
         switch (mode.index) {
           case 0:
             while (true) {
@@ -23087,7 +23087,7 @@
               ++index;
             }
             lastWordStart._value = index;
-            mode = B._WordWrapParseMode_1;
+            mode = B._WordWrapParseMode_10;
             break;
           case 1:
             while (true) {
@@ -23101,7 +23101,7 @@
                 break;
               ++index;
             }
-            mode = B._WordWrapParseMode_2;
+            mode = B._WordWrapParseMode_20;
             break;
           case 2:
             t3 = index - startForLengthCalculations;
@@ -23124,7 +23124,7 @@
                   ++index;
                 }
                 start = index;
-                mode = B._WordWrapParseMode_1;
+                mode = B._WordWrapParseMode_10;
               } else {
                 t3 = lastWordStart._value;
                 if (t3 === lastWordStart)
@@ -23135,13 +23135,13 @@
                 start = lastWordStart._value;
                 if (start === lastWordStart)
                   A.throwExpression(A.LateError$localNI(t2));
-                mode = B._WordWrapParseMode_2;
+                mode = B._WordWrapParseMode_20;
               }
               startForLengthCalculations = start - otherLineOffset;
               lastWordEnd = null;
             } else {
               lastWordEnd = index;
-              mode = B._WordWrapParseMode_0;
+              mode = B._WordWrapParseMode_00;
             }
             break;
         }
@@ -23870,7 +23870,7 @@
       prefix = B.JSString_methods.$mul(" ", t2[0].length);
       index = prefix.length;
       lastWordStart = A._Cell$();
-      for (t2 = lastWordStart.__late_helper$_name, index0 = index, start = 0, startForLengthCalculations = 0, addPrefix = false, mode = B._WordWrapParseMode_00, lastWordEnd = null; true;)
+      for (t2 = lastWordStart.__late_helper$_name, index0 = index, start = 0, startForLengthCalculations = 0, addPrefix = false, mode = B._WordWrapParseMode_0, lastWordEnd = null; true;)
         switch (mode.index) {
           case 0:
             while (true) {
@@ -23885,7 +23885,7 @@
               ++index0;
             }
             lastWordStart._value = index0;
-            mode = B._WordWrapParseMode_10;
+            mode = B._WordWrapParseMode_1;
             break;
           case 1:
             while (true) {
@@ -23899,7 +23899,7 @@
                 break;
               ++index0;
             }
-            mode = B._WordWrapParseMode_20;
+            mode = B._WordWrapParseMode_2;
             break;
           case 2:
             t3 = index0 - startForLengthCalculations;
@@ -23927,7 +23927,7 @@
                   ++index0;
                 }
                 start = index0;
-                mode = B._WordWrapParseMode_10;
+                mode = B._WordWrapParseMode_1;
               } else {
                 t3 = lastWordStart._value;
                 if (t3 === lastWordStart)
@@ -23938,14 +23938,14 @@
                 start = lastWordStart._value;
                 if (start === lastWordStart)
                   A.throwExpression(A.LateError$localNI(t2));
-                mode = B._WordWrapParseMode_20;
+                mode = B._WordWrapParseMode_2;
               }
               startForLengthCalculations = start - index;
               A.assertHelper(addPrefix);
               lastWordEnd = null;
             } else {
               lastWordEnd = index0;
-              mode = B._WordWrapParseMode_00;
+              mode = B._WordWrapParseMode_0;
             }
             break;
         }
@@ -55717,7 +55717,7 @@
     main0() {
       var $async$goto = 0,
         $async$completer = A._makeAsyncAwaitCompleter(type$.void),
-        t1, t2, app, authenticationRepository, t3, host, binding, t4, t5, value, result;
+        t1, t2, app, authenticationRepository, t3, host, path, t4, binding, t5, value, result;
       var $async$main0 = A._wrapJsFunctionForAsync(function($async$errorCode, $async$result) {
         if ($async$errorCode === 1)
           return A._asyncRethrow($async$result, $async$completer);
@@ -55748,22 +55748,31 @@
               A.Future_wait(A._setArrayType([$.$get$Flame_images().load$1(0, "android_spritesheet.png"), $.$get$Flame_images().load$1(0, "dash_spritesheet.png"), $.$get$Flame_images().load$1(0, "dino_spritesheet.png"), $.$get$Flame_images().load$1(0, "sparky_spritesheet.png"), $.$get$Flame_images().load$1(0, "photo_frame_spritesheet_landscape.jpg"), $.$get$Flame_images().load$1(0, "photo_frame_spritesheet_portrait.png"), $.$get$Flame_images().load$1(0, "photo_indicator_spritesheet.png")], type$.JSArray_Future_Image), false, type$.Image);
               t3 = A.Uri_base();
               host = t3.get$host(t3);
-              if (B.JSString_methods.contains$1(host, "stg")) {
+              t3 = A.Uri_base();
+              path = t3.get$path(t3);
+              if (B.JSString_methods.contains$1(host, "stg") || B.JSString_methods.contains$1(path, "stg")) {
                 $.Env___apiBase.set$finalFieldValue("https://eventpro.cheil.rocks/_stg/api/v1");
                 $.Env___appBase.set$finalFieldValue("https://eventpro.cheil.rocks/_stg/apps");
                 $.Env___showDebugOverlays.set$finalFieldValue(true);
                 $.Env___useFirebaseUpload.set$finalFieldValue(false);
-              } else if (host === "localhost") {
-                $.Env___apiBase.set$finalFieldValue("http://localhost/eventpro.cheil.rocks/api/v1");
-                $.Env___appBase.set$finalFieldValue("http://localhost/eventpro.cheil.rocks/apps");
-                $.Env___showDebugOverlays.set$finalFieldValue(true);
-                $.Env___useFirebaseUpload.set$finalFieldValue(false);
+                t3 = $.Env___apiBase;
+                t4 = $.Env___appBase;
               } else {
-                $.Env___apiBase.set$finalFieldValue("https://eventpro.cheil.rocks/_/api/v1");
-                $.Env___appBase.set$finalFieldValue("https://eventpro.cheil.rocks/_/apps");
-                $.Env___showDebugOverlays.set$finalFieldValue(false);
-                $.Env___useFirebaseUpload.set$finalFieldValue(true);
+                if (host === "localhost") {
+                  $.Env___apiBase.set$finalFieldValue("http://localhost/eventpro.cheil.rocks/api/v1");
+                  $.Env___appBase.set$finalFieldValue("http://localhost/eventpro.cheil.rocks/apps");
+                  $.Env___showDebugOverlays.set$finalFieldValue(true);
+                  $.Env___useFirebaseUpload.set$finalFieldValue(false);
+                } else {
+                  $.Env___apiBase.set$finalFieldValue("https://eventpro.cheil.rocks/_/api/v1");
+                  $.Env___appBase.set$finalFieldValue("https://eventpro.cheil.rocks/_/apps");
+                  $.Env___showDebugOverlays.set$finalFieldValue(false);
+                  $.Env___useFirebaseUpload.set$finalFieldValue(true);
+                }
+                t3 = $.Env___apiBase;
+                t4 = $.Env___appBase;
               }
+              A.print__debugPrintThrottled$closure().call$1("Env [apiBase=" + t3._readField$0() + ", appBase=" + t4._readField$0() + "] | path=" + path);
               if ($.WidgetsBinding__instance == null)
                 A.WidgetsFlutterBinding$();
               binding = A.BindingBase_checkInstance($.WidgetsBinding__instance, t1);
@@ -242290,12 +242299,12 @@
     B._TextSelectionToolbarItemPosition_3 = new A._TextSelectionToolbarItemPosition(3, "only");
     B._TrainHoppingMode_0 = new A._TrainHoppingMode(0, "minimize");
     B._TrainHoppingMode_1 = new A._TrainHoppingMode(1, "maximize");
-    B._WordWrapParseMode_0 = new A._WordWrapParseMode(0, "inSpace");
-    B._WordWrapParseMode_00 = new A._WordWrapParseMode0(0, "inSpace");
-    B._WordWrapParseMode_1 = new A._WordWrapParseMode(1, "inWord");
-    B._WordWrapParseMode_10 = new A._WordWrapParseMode0(1, "inWord");
-    B._WordWrapParseMode_2 = new A._WordWrapParseMode(2, "atBreak");
-    B._WordWrapParseMode_20 = new A._WordWrapParseMode0(2, "atBreak");
+    B._WordWrapParseMode_00 = new A._WordWrapParseMode(0, "inSpace");
+    B._WordWrapParseMode_0 = new A._WordWrapParseMode0(0, "inSpace");
+    B._WordWrapParseMode_10 = new A._WordWrapParseMode(1, "inWord");
+    B._WordWrapParseMode_1 = new A._WordWrapParseMode0(1, "inWord");
+    B._WordWrapParseMode_20 = new A._WordWrapParseMode(2, "atBreak");
+    B._WordWrapParseMode_2 = new A._WordWrapParseMode0(2, "atBreak");
     B._ZoneFunction__RootZone__rootScheduleMicrotask = new A._ZoneFunction(B.C__RootZone, A.async___rootScheduleMicrotask$closure(), A.findType("_ZoneFunction<~(Zone,ZoneDelegate,Zone,~())>"));
   })();
   (function staticFields() {
